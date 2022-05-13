@@ -22,9 +22,16 @@ This is the standard folder structure that `Maven Project` provides.
 
 ## Steps ahead
 
-1. Configure `Dispatcher` in `web.xml`
+1. Configure `Dispatcher` in `web.xml`.
 2. Configure the servlets by creating servlet class inside `servletName-servlet.xml` files.
-3. Create controler class and create JSP.
+3. Create controler class and jsp. Create JSP files inside new `jsps` folder inside `WEB-INF` folder. Files: `list-employees.jsp` (to show list of employees). Create a Java folder inside main to keep all the java file.
+4. Setup the database and a table inside it.
+5. Create model class.
+6. Add myBatis configuration file.
+7. Read the config file in util class to start the factory session.
+8. Create Mapper file.
+9. Create table in JSP to display records.
+10. 
 
 ## Tips
 
@@ -38,11 +45,11 @@ This is the standard folder structure that `Maven Project` provides.
 
 1. Dispatcher Servlet
 
-So, `DispatcherServlet` handles an incoming HttpRequest, delegates the request, and processes that request according to the configured HandlerAdapter interfaces that have been implemented within the Spring application along with accompanying annotations specifying handlers, controller endpoints, and response objects. 
+So, `DispatcherServlet` handles an incoming HttpRequest, delegates the request, and processes that request according to the configured HandlerAdapter interfaces that have been implemented within the Spring application along with accompanying annotations specifying handlers, controller endpoints, and response objects.
 
 It acts as the Front Controller for Spring-based web applications. This means that if any request that is going to come into our website the front controller is going to stand in front and is going to accept all the requests and once the front controller accepts that request then this is the job of the front controller that it will make a decision that who is the right controller to handle that request.
 
-Configure `DispatcherServlet`: 
+Configure `DispatcherServlet`:
 
 - Open `web.xml` (Location: src->main->webapp->WEB-INF->web.xml)
 - Copy and Paste the code given below:
@@ -52,7 +59,6 @@ Configure `DispatcherServlet`:
    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation = "http://java.sun.com/xml/ns/j2ee 
    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-
    <servlet>
         <servlet-name></servlet-name>
         <servlet-class></servlet-class>
