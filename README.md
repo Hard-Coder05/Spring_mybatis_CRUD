@@ -29,7 +29,7 @@ This is the standard folder structure that `Maven Project` provides.
 5. Create model class.
 6. Add myBatis configuration file.
 7. Read the config file in util class to start the factory session.
-8. Create Mapper file.
+8. Create Mapper file, add select and insert queries.
 9. Create table in JSP to display records.
 10. 
 

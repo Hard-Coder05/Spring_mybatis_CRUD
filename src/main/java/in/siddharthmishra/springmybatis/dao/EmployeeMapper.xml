@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="in.siddharthmishra.dao.EmployeeMapper">
-	<resultMap type="Employee" id="result">
+	<resultMap type="employee" id="result">
 		<id property="id" column="id" />
 		<result property="fullname" column="fullname" />
 		<result property="email" column="email" />
@@ -13,8 +13,13 @@
 		<result property="address" column="address" />
 	</resultMap>
 
-	<select id="detAllEmployees" resultType="Employee"
+	<select id="detAllEmployees" resultType="employee"
 		resultMap="result">
 		SELECT * FROM employee
 	</select>
+	
+	<insert id="insertEmployee" parameterType="employee" keyProperty="id" useGeneratedKeys="true">
+	INSERT INTO employee(fullname, email, hobbies, country, address)
+	VALUES(#{fullname}, #{email}, #{hobbies}, #{country}, #{address})
+	</insert>
 </mapper>
